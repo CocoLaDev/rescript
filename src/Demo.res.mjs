@@ -10,6 +10,8 @@ console.log(3);
 
 console.log($$Crypto.generateKeyPair());
 
+console.log($$Crypto.hashSHA256("Hello, World"));
+
 export {
   add ,
 }
