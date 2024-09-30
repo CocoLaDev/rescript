@@ -2,7 +2,7 @@
 
 import * as $$Crypto from "crypto";
 
-function generate() {
+function rsa() {
   var match = $$Crypto.generateKeyPairSync("rsa", {
         modulusLength: 2048
       });
@@ -12,7 +12,18 @@ function generate() {
         ];
 }
 
+function ec() {
+  var match = $$Crypto.generateKeyPairSync("ec", {
+        namedCurve: "secp256k1"
+      });
+  return [
+          match.publicKey,
+          match.privateKey
+        ];
+}
+
 export {
-  generate ,
+  rsa ,
+  ec ,
 }
 /* crypto Not a pure module */

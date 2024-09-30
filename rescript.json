@@ -6,6 +6,9 @@
   },
   {
     "dir": "binding"
+  },
+  {
+    "dir": "types"
   }
 ],
   "package-specs": {
