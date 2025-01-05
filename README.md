@@ -40,20 +40,20 @@ npm run res:dev
 ```
 ## Run 
 
-### Run the demo
+### Run the demo with
 
 ```bash
   npm run res:demo
 ```
 
 
-### Run the senario
+### Run the senario with
 
 ```bash
   npm run res:senario
 ```
 
-### Run the tests
+### Run the tests with
 
 ```bash
   npm run res:test
