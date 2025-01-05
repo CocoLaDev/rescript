@@ -24,10 +24,10 @@ let key = "12345678901234567890123456789012" // 32 caractères = 256 bits
 let iv = "1234567890123456" // 16 caractères = 128 bits
 // Chiffrer la donnée
 let encrypted = switch Crypto.encryptAes(~key, ~iv, "Hello, ReScript!") {
-  | Ok(data) => Console.log("Encrypted data: " ++ encrypted) 
-  data
+  | Ok(data) => data
   | Error(_) => "Error during encryption"
 }
+Console.log("Encrypted data: " ++ encrypted) 
 
 // Déchiffrer la donnée
 switch Crypto.decryptAes(~key, ~iv, encrypted) {

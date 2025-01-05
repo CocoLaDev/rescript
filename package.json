@@ -7,7 +7,7 @@
     "res:senario": "node src/Senario.res.mjs",
     "res:clean": "rescript clean",
     "res:dev": "rescript -w",
-    "test": "rescript && node -e \"Promise.all(require('fs').readdirSync('tests').filter(f => f.endsWith('.res.mjs')).map(f => import('./tests/' + f)))\""
+    "res:test": "rescript && node -e \"Promise.all(require('fs').readdirSync('tests').filter(f => f.endsWith('.res.mjs')).map(f => import('./tests/' + f)))\""
   },
   "keywords": [
     "rescript"

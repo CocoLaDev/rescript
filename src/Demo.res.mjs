@@ -14,9 +14,7 @@ if (match.TAG === "Ok") {
   var match$1 = match._0;
   var signature = $$Crypto.signData("Hello, World!", match$1[1]);
   if (signature.TAG === "Ok") {
-    var signature$1 = signature._0;
-    console.log(signature$1);
-    var isValid = $$Crypto.verifySignature("Hello, World!", signature$1, match$1[0]);
+    var isValid = $$Crypto.verifySignature("Hello, World!", signature._0, match$1[0]);
     console.log(isValid);
   } else {
     console.log("Error generating keys: " + signature._0._0);

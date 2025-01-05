@@ -1,23 +1,60 @@
-# ReScript Project Template
 
-- [Installation](../../README.md)
+# ReScript Project
 
-Official ReScript starter template.
+This project is a cryptography library built to handle key cryptographic operations such as private/public key pair generation, data verification, encryption, decryption, and hashing. Additionally, the library bridges TypeScript libraries and functions into the ReScript ecosystem, allowing seamless integration between the two languages.
+
+## Authors
+
+- [@Coralie Boyer](https://github.com/coralieBo)
+- [@Hamza Mekhaneg](https://github.com/hmzaakun)
+- [@Yassine Ouhmmou](https://github.com/Yassine94110)
 
 ## Installation
 
-```sh
-npm install
+### Clone this repos with
+
+```bash
+git clone https://github.com/CocoLaDev/rescript
 ```
 
+### Install app dependancies with
+```bash
+npm install
+```
 ## Build
 
-- Build: `npm run res:build`
-- Clean: `npm run res:clean`
-- Build & watch: `npm run res:dev`
+### Build the code with
 
-## Run
+```bash
+npm run res:build
+```
 
-```sh
-node src/Demo.res.js
+### Clean the repo with
+```bash
+npm run res:clean
+```
+
+### Build and watch with
+```bash
+npm run res:dev
+```
+## Run 
+
+### Run the demo
+
+```bash
+  npm run res:demo
+```
+
+
+## Run the senario
+
+```bash
+  npm run res:senario
+```
+
+## Run the tests
+
+```bash
+  npm run res:test
 ```
