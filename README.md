@@ -47,13 +47,13 @@ npm run res:dev
 ```
 
 
-## Run the senario
+### Run the senario
 
 ```bash
   npm run res:senario
 ```
 
-## Run the tests
+### Run the tests
 
 ```bash
   npm run res:test
