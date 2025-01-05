@@ -1,0 +1,1 @@
+type error = Error(string)

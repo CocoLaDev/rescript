@@ -9,6 +9,11 @@
   },
   {
     "dir": "types"
+  },
+  {
+    "dir": "tests",
+    "subdirs": true,
+    "type": "dev"
   }
 ],
   "package-specs": {

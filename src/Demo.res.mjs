@@ -2,33 +2,52 @@
 
 import * as $$Crypto from "./Crypto.res.mjs";
 
-function add(a, b) {
-  return a + b | 0;
-}
+console.log($$Crypto.hashSHA256("Hello, World!"));
 
-console.log(3);
+console.log($$Crypto.hashSHA3("Hello, World!"));
 
 console.log($$Crypto.generateEcKeyPair());
 
-console.log($$Crypto.hashSHA256("Hello, World!"));
-
 var match = $$Crypto.generateEcKeyPair();
 
-var privateKey = match[1];
+if (match.TAG === "Ok") {
+  var match$1 = match._0;
+  var signature = $$Crypto.signData("Hello, World!", match$1[1]);
+  if (signature.TAG === "Ok") {
+    var signature$1 = signature._0;
+    console.log(signature$1);
+    var isValid = $$Crypto.verifySignature("Hello, World!", signature$1, match$1[0]);
+    console.log(isValid);
+  } else {
+    console.log("Error generating keys: " + signature._0._0);
+  }
+} else {
+  console.log("Error generating keys: " + match._0._0);
+}
 
-var publicKey = match[0];
+var key = "12345678901234567890123456789012";
 
-var signature = $$Crypto.signData("Hello, World!", privateKey);
+var iv = "1234567890123456";
 
-var isValid = $$Crypto.verifySignature("Hello, World!", signature, publicKey);
+var data = $$Crypto.encryptAes(key, iv, "Hello, ReScript!");
 
-console.log(isValid);
+var encrypted;
+
+encrypted = data.TAG === "Ok" ? data._0 : "Error during encryption";
+
+console.log("Encrypted data: " + encrypted);
+
+var decrypted = $$Crypto.decryptAes(key, iv, encrypted);
+
+if (decrypted.TAG === "Ok") {
+  console.log("Decrypted data: " + decrypted._0);
+} else {
+  console.log("Decryption error: " + decrypted._0._0);
+}
 
 export {
-  add ,
-  publicKey ,
-  privateKey ,
-  signature ,
-  isValid ,
+  key ,
+  iv ,
+  encrypted ,
 }
 /*  Not a pure module */

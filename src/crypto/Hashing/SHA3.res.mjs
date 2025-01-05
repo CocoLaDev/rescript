@@ -4,9 +4,9 @@ import * as Js_exn from "rescript/lib/es6/js_exn.js";
 import * as $$Crypto from "crypto";
 import * as Caml_js_exceptions from "rescript/lib/es6/caml_js_exceptions.js";
 
-function hashSha256(data) {
+function hashSha3(data) {
   try {
-    var hash = $$Crypto.createHash("sha256");
+    var hash = $$Crypto.createHash("sha3-256");
     return {
             TAG: "Ok",
             _0: hash.update(data).digest("hex")
@@ -39,6 +39,6 @@ function hashSha256(data) {
 }
 
 export {
-  hashSha256 ,
+  hashSha3 ,
 }
 /* crypto Not a pure module */

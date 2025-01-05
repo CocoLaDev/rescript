@@ -3,9 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "res:build": "rescript",
-    "res:buildAndRun": "rescript && node src/Demo.res.mjs",
+    "res:demo": "node src/Demo.res.mjs",
+    "res:senario": "node src/Senario.res.mjs",
     "res:clean": "rescript clean",
-    "res:dev": "rescript -w"
+    "res:dev": "rescript -w",
+    "test": "rescript && node -e \"Promise.all(require('fs').readdirSync('tests').filter(f => f.endsWith('.res.mjs')).map(f => import('./tests/' + f)))\""
   },
   "keywords": [
     "rescript"

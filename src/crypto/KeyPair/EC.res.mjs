@@ -4,12 +4,17 @@ import * as Js_exn from "rescript/lib/es6/js_exn.js";
 import * as $$Crypto from "crypto";
 import * as Caml_js_exceptions from "rescript/lib/es6/caml_js_exceptions.js";
 
-function hashSha256(data) {
+function generateEcKeyPair() {
   try {
-    var hash = $$Crypto.createHash("sha256");
+    var match = $$Crypto.generateKeyPairSync("ec", {
+          namedCurve: "secp256k1"
+        });
     return {
             TAG: "Ok",
-            _0: hash.update(data).digest("hex")
+            _0: [
+              match.publicKey,
+              match.privateKey
+            ]
           };
   }
   catch (raw_obj){
@@ -29,7 +34,7 @@ function hashSha256(data) {
                 TAG: "Error",
                 _0: {
                   TAG: "Error",
-                  _0: "Unknown hashing error"
+                  _0: "Unknown EC key pair generation error"
                 }
               };
       }
@@ -39,6 +44,6 @@ function hashSha256(data) {
 }
 
 export {
-  hashSha256 ,
+  generateEcKeyPair ,
 }
 /* crypto Not a pure module */
